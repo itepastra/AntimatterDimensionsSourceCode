@@ -168,6 +168,13 @@ export const ITEM_REWARDS = {
   "Break Infinity Dimension Scaling": grant_repeatable_inf_upgrade(1),
   "Break Infinity IP Generation": grant_repeatable_inf_upgrade(2),
 
+  "Eternity Upgrade Unspent Points": grant_eternity_upgrade(1),
+  "Eternity Upgrade Eternities Multiplier": grant_eternity_upgrade(2),
+  "Eternity Upgrade Infinity Challenge Time Multiplier": grant_eternity_upgrade(3),
+  "Eternity Upgrade Achievement Multiplier": grant_eternity_upgrade(4),
+  "Eternity Upgrade Time Theorems Multiplier": grant_eternity_upgrade(5),
+  "Eternity Upgrade Days Played Multiplier": grant_eternity_upgrade(6),
+
   "Challenge 1 Reward": grant_normal_challenge(1),
   "Challenge 2 Reward": grant_normal_challenge(2),
   "Challenge 3 Reward": grant_normal_challenge(3),
@@ -212,6 +219,12 @@ function grant_inf_upgrade(name) {
     } else {
       player.infinityUpgrade.add(name);
     }
+  };
+}
+
+function grant_eternity_upgrade(number) {
+  return () => {
+    player.eternityUpgrades.add(number);
   };
 }
 
