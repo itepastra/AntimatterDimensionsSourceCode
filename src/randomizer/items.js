@@ -164,6 +164,10 @@ export const ITEM_REWARDS = {
   "Break Infinity Autobuy Max Dimboost": grant_inf_upgrade("autobuyMaxDimboosts"),
   "Break Infinity Autobuyer Speed": grant_inf_upgrade("autoBuyerUpgrade"),
 
+  "Break Infinity Tickspeed Scaling": grant_repeatable_inf_upgrade(0),
+  "Break Infinity Dimension Scaling": grant_repeatable_inf_upgrade(1),
+  "Break Infinity IP Generation": grant_repeatable_inf_upgrade(2),
+
   "Challenge 1 Reward": grant_normal_challenge(1),
   "Challenge 2 Reward": grant_normal_challenge(2),
   "Challenge 3 Reward": grant_normal_challenge(3),
@@ -177,6 +181,22 @@ export const ITEM_REWARDS = {
   "Challenge 11 Reward": grant_normal_challenge(11),
   "Challenge 12 Reward": grant_normal_challenge(12),
 };
+
+function grant_repeatable_inf_upgrade(number) {
+  return () => {
+    if (number === 0) {
+      // Tickspeed scaling
+      player.infinityRebuyables[0] = Math.min(player.infinityRebuyables[0] + 1, 8);
+    } else if (number === 1) {
+      // Dimension scaling
+      player.infinityRebuyables[1] = Math.min(player.infinityRebuyables[1] + 1, 7);
+    } else if (number === 2) {
+      // IP Generator
+      player.infinityRebuyables[2] = Math.min(player.infinityRebuyables[2] + 1, 10);
+    }
+    GameCache.dimensionMultDecrease.invalidate();
+  };
+}
 
 function grant_achievement(n) {
   return () => {
