@@ -162,7 +162,7 @@ export const ITEM_REWARDS = {
   "Break Infinity Challenge Multiplier": grant_inf_upgrade("challengeMult"),
   "Break Infinity Passive Infinities Generator": grant_inf_upgrade("infinitiedGeneration"),
   "Break Infinity Autobuy Max Dimboost": grant_inf_upgrade("autobuyMaxDimboosts"),
-  "Break Infinity Autobuyer Speed": grant_inf_upgrade("autoBuyerUpgrade")
+  "Break Infinity Autobuyer Speed": grant_inf_upgrade("autoBuyerUpgrade"),
 
   "Challenge 1 Reward": grant_normal_challenge(1),
   "Challenge 2 Reward": grant_normal_challenge(2),
