@@ -251,7 +251,11 @@ function grant_eternity_upgrade(number) {
 }
 
 function grant_normal_challenge(int) {
-  player.challenge.infinity.completedBits |= 1 << this.id;
+  return () => {
+    player.challenge.normal.completedBits |= 1 << int;
+  };
+}
+
 function grant_infinity_challenge(int) {
   return () => {
     player.challenge.infinity.completedBits |= 1 << int;
