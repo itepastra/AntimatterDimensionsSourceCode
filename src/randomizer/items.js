@@ -187,6 +187,16 @@ export const ITEM_REWARDS = {
   "Challenge 10 Reward": grant_normal_challenge(10),
   "Challenge 11 Reward": grant_normal_challenge(11),
   "Challenge 12 Reward": grant_normal_challenge(12),
+
+  "Infinity Challenge 1 Reward": grant_infinity_challenge(1),
+  "Infinity Challenge 2 Reward": grant_infinity_challenge(2),
+  "Infinity Challenge 3 Reward": grant_infinity_challenge(3),
+  "Infinity Challenge 4 Reward": grant_infinity_challenge(4),
+  "Infinity Challenge 5 Reward": grant_infinity_challenge(5),
+  "Infinity Challenge 6 Reward": grant_infinity_challenge(6),
+  "Infinity Challenge 7 Reward": grant_infinity_challenge(7),
+  "Infinity Challenge 8 Reward": grant_infinity_challenge(8),
+
 };
 
 function grant_repeatable_inf_upgrade(number) {
@@ -230,4 +240,10 @@ function grant_eternity_upgrade(number) {
 
 function grant_normal_challenge(int) {
   player.challenge.infinity.completedBits |= 1 << this.id;
+function grant_infinity_challenge(int) {
+  return () => {
+    player.challenge.infinity.completedBits |= 1 << int;
+  };
+}
+
 }
