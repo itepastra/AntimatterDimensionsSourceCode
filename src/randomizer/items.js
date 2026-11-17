@@ -175,6 +175,14 @@ export const ITEM_REWARDS = {
   "Eternity Upgrade Time Theorems Multiplier": grant_eternity_upgrade(5),
   "Eternity Upgrade Days Played Multiplier": grant_eternity_upgrade(6),
 
+  "Dilation Upgrade Double Tachyon Galaxies": grant_dilation_upgrade(4),
+  "Dilation Upgrade Replicanti Multiplier": grant_dilation_upgrade(5),
+  "Dilation Upgrade Dilated Time Dimension Multiplier": grant_dilation_upgrade(6),
+  "Dilation Upgrade Dilated Time Infinity Point Multiplier": grant_dilation_upgrade(7),
+  "Dilation Upgrade All Dimension Split": grant_dilation_upgrade(8),
+  "Dilation Upgrade Reduce Penalty": grant_dilation_upgrade(9),
+  "Dilation Upgrade Time Theorem Generation": grant_dilation_upgrade(10),
+
   "Challenge 1 Reward": grant_normal_challenge(1),
   "Challenge 2 Reward": grant_normal_challenge(2),
   "Challenge 3 Reward": grant_normal_challenge(3),
@@ -247,6 +255,12 @@ function grant_inf_upgrade(name) {
 function grant_eternity_upgrade(number) {
   return () => {
     player.eternityUpgrades.add(number);
+  };
+}
+
+function grant_dilation_upgrade(number) {
+  return () => {
+    player.dilation.upgrades.add(number);
   };
 }
 
