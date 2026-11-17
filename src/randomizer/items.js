@@ -197,6 +197,18 @@ export const ITEM_REWARDS = {
   "Infinity Challenge 7 Reward": grant_infinity_challenge(7),
   "Infinity Challenge 8 Reward": grant_infinity_challenge(8),
 
+  "Eternity Challenge 1 Completion": grant_eternity_challenge("eterc1"),
+  "Eternity Challenge 2 Completion": grant_eternity_challenge("eterc2"),
+  "Eternity Challenge 3 Completion": grant_eternity_challenge("eterc3"),
+  "Eternity Challenge 4 Completion": grant_eternity_challenge("eterc4"),
+  "Eternity Challenge 5 Completion": grant_eternity_challenge("eterc5"),
+  "Eternity Challenge 6 Completion": grant_eternity_challenge("eterc6"),
+  "Eternity Challenge 7 Completion": grant_eternity_challenge("eterc7"),
+  "Eternity Challenge 8 Completion": grant_eternity_challenge("eterc8"),
+  "Eternity Challenge 9 Completion": grant_eternity_challenge("eterc9"),
+  "Eternity Challenge 10 Completion": grant_eternity_challenge("eterc10"),
+  "Eternity Challenge 11 Completion": grant_eternity_challenge("eterc11"),
+  "Eternity Challenge 12 Completion": grant_eternity_challenge("eterc12"),
 };
 
 function grant_repeatable_inf_upgrade(number) {
@@ -246,4 +258,8 @@ function grant_infinity_challenge(int) {
   };
 }
 
+function grant_eternity_challenge(challenge) {
+  return () => {
+    player.eternityChalls[challenge] += 1;
+  };
 }
